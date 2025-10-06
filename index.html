@@ -3,158 +3,1122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дмитрий Цюра | Начинающий специалист</title>
-    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="io.ico" type="image/x-icon">
+    <title>Дмитрий Цюра | Резюме в японском стиле</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --primary: #e53935;
+            --primary-dark: #b71c1c;
+            --secondary: #1a1a1a;
+            --accent: #ffab00;
+            --text: #f5f5f5;
+            --text-secondary: #b0b0b0;
+            --bg: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --border: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '侍'; /* Самурайский символ */
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Header Styles */
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.7)), 
+                        url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .header-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .header-content h1 {
+            margin-bottom: 1rem;
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px var(--primary);
+            }
+            to {
+                text-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary-dark);
+            }
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .contacts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            padding-right: 20px;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .skill-list li:before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--card-bg);
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -10px;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-marker {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -10px;
+        }
+        
+        /* Projects Section - УВЕЛИЧЕННЫЙ БЛОК */
+        .projects-section {
+            background: linear-gradient(to bottom, var(--bg), var(--secondary));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .projects-section:before {
+            content: 'プロジェクト';
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.03);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            z-index: 0;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-tech {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .tech-tag {
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-info h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .project-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Education Section */
+        .education-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-content:before {
+            content: '学び';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.03);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Additional Info Section */
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .additional-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .additional-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .additional-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-level {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .qualities-list {
+            list-style: none;
+        }
+        
+        .qualities-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .qualities-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .qualities-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        
+        /* Медиа-запросы */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text {
+                padding-right: 0;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-marker,
+            .timeline-item:nth-child(even) .timeline-marker {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:after,
+            .timeline-item:nth-child(even) .timeline-content:after {
+                left: -10px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .header-content h1 {
+                font-size: 3rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Анимации для появления элементов */
+        [data-aos] {
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+        
+        /* Специальные анимации для разных элементов */
+        .fade-up {
+            transform: translateY(30px);
+        }
+        
+        .fade-down {
+            transform: translateY(-30px);
+        }
+        
+        .fade-left {
+            transform: translateX(-30px);
+        }
+        
+        .fade-right {
+            transform: translateX(30px);
+        }
+        
+        .zoom-in {
+            transform: scale(0.9);
+        }
+        
+        .flip-left {
+            transform: perspective(1000px) rotateY(-90deg);
+        }
+        
+        .flip-right {
+            transform: perspective(1000px) rotateY(90deg);
+        }
+        
+        /* Анимация для появления с поворотом */
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+        
+        .rotate-in {
+            animation: rotateIn 0.8s ease-out;
+        }
+    </style>
 </head>
 <body>
-    <div class="intro-animation">
-        <div class="typing-text" id="typingText"></div>
-    </div>
-
-    <header class="brutal-header">
-        <div class="header-grid">
-            <div class="name-container">
-                <h1 class="main-title">ЦЮРА</h1>
-                <h1 class="main-title">ДМИТРИЙ</h1>
-                <h2 class="subtitle">СПЕЦИАЛИСТ</h2>
-                <div class="title-divider"></div>
-            </div>
-            <div class="photo-container">
-                <div class="photo-frame">
-                    <div class="photo-placeholder"><img src="profile.jpg" alt=""></div>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 data-aos="fade-down" data-aos-duration="1000">Дмитрий Цюра</h1>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Python-разработчик / Системный администратор</p>
+                <div class="contacts" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (922) 459-11-88</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <span>@DellWay</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>dima.tsyura20@mail.ru</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down fa-2x"></i>
         </div>
     </header>
 
-    <main>
-        <section class="about-section">
-            <div class="section-header">
-                <h2 class="section-title">ОБО МНЕ</h2>
-                <div class="section-divider"></div>
-            </div>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 data-aos="fade-down">О себе</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p><strong>23 года</strong>, родился 1 августа 2001</p>
-                    <p><strong>Проживаю:</strong> Ноябрьск</p>
-                    <p><strong>Готов к переезду:</strong> Санкт-Петербург, Тюмень</p>
-                    <p><strong>Контакты:</strong> +7 (922) 4591188, dima.tsyura20@mail.ru</p>
-                    <div class="about-description">
-                        <p>Разработчик с практическим опытом работы с Python, HTML и CSS.</p>
-                        <p>Эффективно решаю задачи, уделяя внимание качеству кода и производительности.</p>
-                        <p>Командный игрок с гибким мышлением, способный быстро адаптироваться к новым технологиям.</p>
+                <div class="about-text" data-aos="fade-right">
+                    <p>Молодой и амбициозный IT-специалист с более чем 2-летним опытом в разработке, системном администрировании и техническом обучении.</p>
+                    <p>Ищу позицию <strong>Python-разработчика</strong>, <strong>Системного администратора</strong> или <strong>Специалиста технической поддержки</strong>, где смогу применить свои технические навыки, способность к быстрому обучению и практический опыт для решения сложных задач и вклада в развитие компании.</p>
+                    <div class="personal-info">
+                        <p><strong>Местоположение:</strong> Ноябрьск</p>
+                        <p><strong>Готов к переезду:</strong> Москва, Санкт-Петербург, Тюмень</p>
+                        <p><strong>Готов к командировкам:</strong> Да</p>
                     </div>
                 </div>
-                <div class="about-decoration">
-                    <div class="decoration-element"></div>
-                    <div class="decoration-element"></div>
-                    <div class="decoration-element"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="experience-section">
-            <div class="section-header">
-                <h2 class="section-title">ОПЫТ РАБОТЫ</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2023-2025</div>
-                    <div class="timeline-content">
-                        <h3>Академия ТОР</h3>
-                        <p class="position">IT-тренер</p>
-                        <ul class="timeline-list">
-                            <li>Обучение студентов Python, HTML/CSS</li>
-                            <li>Разработка 10+ учебных программ</li>
-                            <li>Организация IT-мероприятий</li>
-                            <li>Обеспечил работоспособность компьютерной техники организации</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2022-2023</div>
-                    <div class="timeline-content">
-                        <h3>ООО "РЕ ТРЭЙДИНГ"</h3>
-                        <p class="position">Специалист по базам данных</p>
-                        <ul class="timeline-list">
-                            <li>Работа с клиентами и документами</li>
-                            <li>Учет и размещение товара</li>
-                        </ul>
+                <div class="about-image" data-aos="fade-left" data-aos-delay="300">
+                    <!-- Placeholder for image -->
+                    <div style="width:100%;height:400px;background:linear-gradient(45deg, #333, #555);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;">
+                        <div style="text-align:center;">
+                            <i class="fas fa-user-ninja fa-5x" style="margin-bottom:20px;"></i>
+                            <p>Фото в японском стиле</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="skills-section">
-            <div class="section-header">
-                <h2 class="section-title">НАВЫКИ</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="skills-grid" id="skillsGrid">
-                <!-- Filled by JavaScript -->
-            </div>
-        </section>
-
-        <section class="additional-section">
-            <div class="section-header">
-                <h2 class="section-title">ДОПОЛНИТЕЛЬНО</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="additional-content">
-                <div class="language-skills">
-                    <h3>Языки</h3>
-                    <p>Русский — Родной</p>
-                    <p>Английский — А2 (Elementary)</p>
-                </div>
-                <div class="employment-preferences">
-                    <h3>Предпочтения</h3>
-                    <p>Готов к командировкам</p>
-                    <p>Удаленная работа возможна</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="education-section">
-            <div class="section-header">
-                <h2 class="section-title">ОБРАЗОВАНИЕ</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="education-item">
-                <h3>Ноябрьский колледж профессиональных и информационных технологий</h3>
-                <p class="education-date">2022</p>
-                <p class="education-specialty">Программист</p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="brutal-footer">
-        <div class="footer-content">
-            <p>© 2025 Дмитрий Цюра</p>
-            <p>Резюме обновлено 25 июля 2025</p>
-            <button class="contact-btn" id="contactBtn">СВЯЗАТЬСЯ</button>
         </div>
-        <div class="footer-decoration"></div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 data-aos="fade-down">Навыки</h2>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-code"></i> Программирование</h3>
+                    <ul class="skill-list">
+                        <li>Python (разработка ботов, парсинг, автоматизация)</li>
+                        <li>HTML, CSS (создание лендингов и веб-приложений)</li>
+                        <li>Java (базовые навыки, использовал в веб-разработке)</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-tools"></i> Фреймворки и библиотеки</h3>
+                    <ul class="skill-list">
+                        <li>Telethon (для работы с Telegram API)</li>
+                        <li>PyQt5 (создание десктопных приложений)</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-database"></i> Базы данных</h3>
+                    <ul class="skill-list">
+                        <li>SQLite (работа с базами данных в проектах)</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3><i class="fas fa-server"></i> Системное администрирование</h3>
+                    <ul class="skill-list">
+                        <li>Настройка и обслуживание ПК и оргтехники</li>
+                        <li>Установка и настройка ПО</li>
+                        <li>Обеспечение работоспособности IT-инфраструктуры</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 data-aos="fade-down">Опыт работы</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Март 2023 — Июнь 2025 (2 года 4 месяца)</span>
+                        <h3>Академия ТОР | Ноябрьск</h3>
+                        <p><em>IT-тренер / Системный администратор</em></p>
+                        <ul>
+                            <li>Разработал и провел более 10 учебных курсов по Python, HTML/CSS и веб-дизайну</li>
+                            <li>Осуществлял полное техническое сопровождение учебного процесса</li>
+                            <li>Участвовал в организации IT-мероприятий (хакатоны, мастер-классы)</li>
+                            <li>Обеспечивал стабильную работу локальной IT-инфраструктуры</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Апрель 2021 — Июль 2021 (4 месяца)</span>
+                        <h3>ООО "РЕ ТРЭЙДИНГ"</h3>
+                        <p><em>Специалист по внедрению и сопровождению баз данных</em></p>
+                        <ul>
+                            <li>Выполнял кассовые операции и обслуживание клиентов</li>
+                            <li>Отвечал за приемку, учет и размещение товара</li>
+                            <li>Контролировал документооборот</li>
+                            <li>Работал с базами данных товарооборота</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section - УВЕЛИЧЕННЫЙ БЛОК -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 data-aos="fade-down">Проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="project-image">
+                        <!-- Placeholder for project image -->
+                        <div style="width:100%;height:100%;background:linear-gradient(45deg, #1a237e, #311b92);display:flex;align-items:center;justify-content:center;color:#fff;">
+                            <i class="fab fa-telegram fa-5x"></i>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Telethon</span>
+                            <span class="tech-tag">PyQt5</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Parser-TG</h3>
+                        <p class="project-description">Многофункциональный Telegram-бот для автоматической пересылки сообщений. Реализован полноценный пользовательский интерфейс через PyQt5 и надежное хранение данных в SQLite.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/DellWay/parser-tg" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="project-image">
+                        <!-- Placeholder for project image -->
+                        <div style="width:100%;height:100%;background:linear-gradient(45deg, #004d40, #00796b);display:flex;align-items:center;justify-content:center;color:#fff;">
+                            <i class="fas fa-clock fa-5x"></i>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Pomodoro Loft Radio</h3>
+                        <p class="project-description">Минималистичное и стильное веб-приложение для управления временем по технике Pomodoro со встроенным онлайн-радио. Демонстрирует навыки фронтенд-разработки и внимание к пользовательскому опыту.</p>
+                        <div class="project-links">
+                            <a href="https://deliway.github.io/Pomodoro-Loft-Radio" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Демо
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="project-image">
+                        <!-- Placeholder for project image -->
+                        <div style="width:100%;height:100%;background:linear-gradient(45deg, #bf360c, #e64a19);display:flex;align-items:center;justify-content:center;color:#fff;">
+                            <i class="fas fa-user-circle fa-5x"></i>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Портфолио-лендинг</h3>
+                        <p class="project-description">Персональная страница-портфолио, представляющая мои навыки и проекты. Создана с акцентом на минимализм, удобство навигации и визуальную привлекательность.</p>
+                        <div class="project-links">
+                            <a href="https://deliway.github.io/portfolio" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Демо
+                            </a>
+                            <a href="https://github.com/DellWay/portfolio" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="project-image">
+                        <!-- Placeholder for project image -->
+                        <div style="width:100%;height:100%;background:linear-gradient(45deg, #4a148c, #7b1fa2);display:flex;align-items:center;justify-content:center;color:#fff;">
+                            <i class="fas fa-robot fa-5x"></i>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Automation Bot</h3>
+                        <p class="project-description">Универсальный бот для автоматизации рутинных задач. Включает функции парсинга данных, автоматизации отчетности и интеграции с различными API. Проект демонстрирует навыки работы с асинхронным программированием и веб-скрейпингом.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="project-image">
+                        <!-- Placeholder for project image -->
+                        <div style="width:100%;height:100%;background:linear-gradient(45deg, #01579b, #0288d1);display:flex;align-items:center;justify-content:center;color:#fff;">
+                            <i class="fas fa-chart-line fa-5x"></i>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Data Analyzer</h3>
+                        <p class="project-description">Приложение для анализа и визуализации данных. Позволяет загружать CSV-файлы, выполнять статистический анализ и строить различные типы графиков. Интерфейс реализован с использованием Tkinter.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="flip-left" data-aos-delay="600">
+                    <div class="project-image">
+                        <!-- Placeholder for project image -->
+                        <div style="width:100%;height:100%;background:linear-gradient(45deg, #33691e, #689f38);display:flex;align-items:center;justify-content:center;color:#fff;">
+                            <i class="fas fa-gamepad fa-5x"></i>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pygame</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Arcade Game Collection</h3>
+                        <p class="project-description">Коллекция классических аркадных игр, написанных на Python с использованием библиотеки Pygame. Включает такие игры как "Змейка", "Тетрис" и "Арканоид". Проект демонстрирует понимание игровых механик и работу с графикой.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 data-aos="fade-down">Образование</h2>
+            <div class="education-content" data-aos="zoom-in">
+                <h3>ГБПОУ ЯНАО "Ноябрьский колледж профессиональных и информационных технологий"</h3>
+                <p><strong>Специальность:</strong> Программист</p>
+                <p><strong>Уровень:</strong> Среднее специальное образование</p>
+                <p><strong>Год окончания:</strong> 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section id="additional">
+        <div class="container">
+            <h2 data-aos="fade-down">Дополнительная информация</h2>
+            <div class="additional-grid">
+                <div class="additional-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-language"></i> Языки</h3>
+                    <div class="language-level">
+                        <span>Русский</span>
+                        <span>Родной</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                    <div class="language-level">
+                        <span>Английский</span>
+                        <span>A2 (Elementary)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Активно изучаю язык, ежедневно практикую чтение технической документации. Планирую достичь уровня B1 в течение 6 месяцев.</p>
+                </div>
+                <div class="additional-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-user-check"></i> Личные качества</h3>
+                    <ul class="qualities-list">
+                        <li>Целеустремленность</li>
+                        <li>Быстрая обучаемость</li>
+                        <li>Инициативность</li>
+                        <li>Аналитическое мышление</li>
+                        <li>Внимание к деталям</li>
+                        <li>Адаптивность</li>
+                    </ul>
+                </div>
+                <div class="additional-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-heart"></i> Хобби и увлечения</h3>
+                    <ul class="qualities-list">
+                        <li>Активные виды спорта: волейбол, футбол</li>
+                        <li>Технические эксперименты</li>
+                        <li>Изучение новых технологий</li>
+                        <li>Японская культура и аниме</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 data-aos="fade-down">Готов к новым вызовам!</h3>
+                <p data-aos="fade-up" data-aos-delay="200">Открыт к предложениям по стажировкам, курсам повышения квалификации и менторским программам.</p>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="400">
+                    <a href="tel:+79224591188" class="footer-link">
+                        <i class="fas fa-phone"></i> +7 (922) 459-11-88
+                    </a>
+                    <a href="https://t.me/DellWay" class="footer-link" target="_blank">
+                        <i class="fab fa-telegram"></i> @DellWay
+                    </a>
+                    <a href="mailto:dima.tsyura20@mail.ru" class="footer-link">
+                        <i class="fas fa-envelope"></i> dima.tsyura20@mail.ru
+                    </a>
+                </div>
+                <p class="copyright" data-aos="fade-up" data-aos-delay="600">© 2023 Дмитрий Цюра. Все права защищены. 武士道 (Bushido)</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Модальное окно для формы связи -->
-    <div class="contact-modal" id="contactModal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h3>Свяжитесь со мной</h3>
-            <div class="contact-info">
-                <p><strong>Телефон:</strong> +7 (922) 4591188</p>
-                <p><strong>Email:</strong> dima.tsyura20@mail.ru</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Анимация для скролла вниз
+        document.querySelector('.scroll-down').addEventListener('click', function() {
+            window.scrollTo({
+                top: document.querySelector('#about').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Добавление случайных анимаций для элементов при скролле
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('rotate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Наблюдаем за всеми карточками проектов
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
-
